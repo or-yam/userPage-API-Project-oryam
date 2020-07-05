@@ -8,8 +8,10 @@ $('#data-btn').on('click', function () {
 $('#display-btn').on('click', function () {
   console.log(apis.data);
   const rend = new Renderer();
-  rend.appendUserData(apis.data.userData);
-  rend.appendUserData(apis.data.baconData);
-  rend.appendUserData(apis.data.kenyaData);
-  rend.appendUserData(apis.data.pokemonData);
+  const friends = apis.data.userData.splice(1, 6);
+  rend.appendUserData(apis.data.userData[0]);
+  rend.appendBaconData(apis.data.baconData);
+  rend.appendKenyaData(apis.data.kenyaData);
+  rend.appendPokemonData(apis.data.pokemonData);
+  rend.appendFriends(friends);
 });
