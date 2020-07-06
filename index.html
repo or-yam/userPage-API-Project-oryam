@@ -29,7 +29,7 @@
       <button id="data-btn">Load User Data</button>
       <button class="invisible" id="display-btn">Display User</button>
       <button class="invisible" id="save-btn">Save User</button>
-      <button class="invisible" id="load-btn">Load Saved User</button>
+      <button class="invisible" id="load-btn">Show Last Saved User</button>
     </div>
     <div class="saved-users">
     </div>
@@ -72,7 +72,12 @@
   </script>
 
   <script id="dropdown-template" type="text/x-handlebars-template">
-    <select name="users" id="savedList"></select>
+    <select id="drop-down" name="users" id="savedList">
+      {{#each this}}
+      <option value={{@index}}>{{userData.0.name.first}}</option>
+      {{/each}}
+      <input id="getSavedUser" type="submit" value="Show this User">
+    </select>
    </script>
 
 
