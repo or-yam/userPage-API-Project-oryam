@@ -36,4 +36,12 @@ class Renderer {
     const newHTML = template(data);
     $('.friends-container').append(newHTML);
   }
+
+  appendDropdown(data) {
+    $('.saved-users').empty();
+    const source = $('#dropdown-template').html();
+    const template = Handlebars.compile(source);
+    const newHTML = template(data);
+    $('.saved-users').append(newHTML);
+  }
 }
